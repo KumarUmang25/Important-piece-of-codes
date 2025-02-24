@@ -3,52 +3,51 @@
 
 
 
-// h1=document.querySelector('h1');
+ h1=document.querySelector('h1');
 
-// function changeColor(color,delay,nextColorChange){
-//     setTimeout(function(){
-//         h1.style.color=color;
-//         if(nextColorChange){
-//             nextColorChange();
-//         }
-//     },delay);
-// }
+ function changeColor(color,delay,nextColorChange){
+     setTimeout(function(){
+         h1.style.color=color;
+         if(nextColorChange){
+             nextColorChange();
+         }
+     },delay);
+ }
 
-// changeColor("red",1000,()=>{
-//     changeColor("orange",1000);
-// });
+ changeColor("red",1000,()=>{
+     changeColor("orange",1000);
+ });
 
 
 
 //function to store data in the data---base:
 
-// function savetoDb(data,success,failure){
-//     let interNetSpeed=Math.floor(Math.random()*10+1);
-//     if(interNetSpeed>4){
-//         success();
-//         //console.log("Your data was saved");
-//     }
-//     else{
-//         failure();
-//         //console.log("Weak internet connection");
-//     }
-// }
+ function savetoDb(data,success,failure){
+     let interNetSpeed=Math.floor(Math.random()*10+1);
+     if(interNetSpeed>4){
+         success();
+         //console.log("Your data was saved");
+     }
+     else{
+         failure();
+         //console.log("Weak internet connection");
+     }
+ }
 
-// savetoDb("Kumar Umang",()=>{
-//     console.log("Your data was saved");
-//     savetoDb("Hello World",()=>{
-//         console.log("Success");//This will keep expanding and make it look complex and result in a callback hell...making everything confusing
-//         savetoDb("Umang",()=>{
-//             console.log("Final data was saved");
-//         },()=>{
-//             console.log("Weak connection,data not saved");
-//         });
-//     },()=>{
-//         console.log("Failure");
-//     });
-// },()=>{
-//     console.log("Weak connection");
-// });
+ savetoDb("Kumar Umang",()=>{
+     console.log("Your data was saved");
+     savetoDb("Hello World",()=>{
+         console.log("Success");//This will keep expanding and make it look complex and result in a callback hell...making everything confusing
+         savetoDb("Umang",()=>{
+             console.log("Final data was saved")},()=>{
+             console.log("Weak connection,data not saved");
+         });
+     },()=>{
+         console.log("Failure");
+     });
+ },()=>{
+     console.log("Weak connection");
+ });
 
 
 //Refactoring callback hell with promises..
